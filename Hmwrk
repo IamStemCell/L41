@@ -75,3 +75,92 @@ def delete_note(request, note_id):
         return redirect('notes_list')
     
     return render(request, 'notes1/delete_note.html', {'note': note})
+
+
+директорія notes1/templates/notes1
+файл note_detail.html 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Note Details/title>
+</head>
+<body>
+    <h1>Note Details</h1>
+    <h2>{{ note.title }}</h2>
+    <p>{{ note.text }}</p>
+    <p>Reminder: {{ note.reminder }}</p>
+    <p>Category: {{ note.category }}</p>
+    <h2>Note Editing</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save changes</button>
+    </form>
+    <h2>Delete the note</h2>
+    <form method="post" action="{% url 'delete_note' note_id=note.id %}">
+        {% csrf_token %}
+        <button type="submit">delete</button>
+    </form>
+</body>
+</html>
+
+
+директорія notes1/templates/notes1
+файл create_note.html 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Note Details/title>
+</head>
+<body>
+    <h1>Note Details</h1>
+    <h2>{{ note.title }}</h2>
+    <p>{{ note.text }}</p>
+    <p>Reminder: {{ note.reminder }}</p>
+    <p>Category: {{ note.category }}</p>
+    <h2>Note Editing</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save changes</button>
+    </form>
+    <h2>Delete the note</h2>
+    <form method="post" action="{% url 'delete_note' note_id=note.id %}">
+        {% csrf_token %}
+        <button type="submit">delete</button>
+    </form>
+</body>
+</html>
+
+директорія notes1/templates/notes1
+файл delete_note.html 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Note Details/title>
+</head>
+<body>
+    <h1>Note Details</h1>
+    <h2>{{ note.title }}</h2>
+    <p>{{ note.text }}</p>
+    <p>Reminder: {{ note.reminder }}</p>
+    <p>Category: {{ note.category }}</p>
+    <h2>Note Editing</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save changes</button>
+    </form>
+    <h2>Delete the note</h2>
+    <form method="post" action="{% url 'delete_note' note_id=note.id %}">
+        {% csrf_token %}
+        <button type="submit">delete</button>
+    </form>
+</body>
+</html>
