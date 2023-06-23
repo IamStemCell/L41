@@ -1,3 +1,6 @@
+#чернетка draft, сама  аппка у zip архіві в LMS і в цій репо 
+
+
 # В файлі notes1.forms.py
 from django import forms
 
